@@ -55,7 +55,7 @@ export default {
 		// console.log("home:",this.username);
 		this.username = sessionStorage.getItem("accessToken");
 		console.log("header : ",this.username);
-		this.$http.post("http://10.62.52.155:5000/GetUser").then(response => { //success
+		this.$http.post("http://localhost:5000/GetUser").then(response => { //success
 				console.log(response.body.data);
 				
 			},

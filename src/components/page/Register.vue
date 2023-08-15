@@ -22,7 +22,7 @@
 			    <img v-if="registerData.avatarUrl" :src="registerData.avatarUrl" class="avatar">
 			    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 			  </el-upload>
-			</el-form-item>
+	
 		</el-col>
 	  </el-row>
       
@@ -106,7 +106,7 @@ export default {
 	      this.$refs.registerForm.validate(async (valid) => {
 	        if (valid) {
 	          try {
-	            const response = await axios.post('/api/register', this.registerData);
+	            const response = await axios.post('http://localhost:5000/register', this.registerData);
 	            this.$message.success('注册成功');
 	            // 处理注册成功后的逻辑
 	          } catch (error) {

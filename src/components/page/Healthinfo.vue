@@ -155,7 +155,7 @@
 						allergy += this.allergies.domains[i].value + "、";
 					}
 					allergy = allergy.substring(0,allergy.length-1);
-					this.$http.post("http://10.62.44.169:5000/Register", {
+					this.$http.post("http://localhost:5000/Register", {
 						username : this.username,
 						password : this.password,
 						smoke: this.smoke,

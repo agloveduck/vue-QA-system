@@ -112,10 +112,11 @@
 		beforeCreate() {
 			this.username = localStorage.getItem("username");
 			console.log(this.username);
-			this.$http.post("http://10.62.44.169:5000/GetUser",{
+			this.$http.post("http://localhost:5000/GetUser",{
 				username : this.username,
 			}, {
 				emulateJSON: true
+				
 			}).then(response => { //success
 					console.log( response.body);
 					this.formUser.username = response.body.username;
@@ -153,7 +154,7 @@
 				},
 				response => {
 					//error
-					console.log(response);
+					console.log('我恨你'+response);
 			
 				},2000);
 		},
@@ -165,7 +166,7 @@
 			handleSearch() {
 				console.log(this.formData);
 				console.log(this.username);
-				this.$http.post("http://10.62.44.169:5000/QuestionSubmit", {
+				this.$http.post("http://localhost:5000/QuestionSubmit", {
 					username : this.username,
 					question : this.formData.question,
 				},
@@ -189,7 +190,7 @@
 				console.log("--ok--",event.currentTarget.innerText);
 				var ques = event.currentTarget.innerText;
 				this.formData.question = ques;
-				this.$http.post("http://10.62.44.169:5000/QuestionSubmit", {
+				this.$http.post("http://localhost:5000/QuestionSubmit", {
 					username : this.username,
 					question : this.formData.question,
 				},

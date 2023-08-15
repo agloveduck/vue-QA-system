@@ -53,7 +53,7 @@ export default {
         submitForm() {
 			console.log(this.form.username);
 			console.log(this.form.password);
-			this.$http.post("http://10.62.44.169:5000/Login", this.form, {
+			this.$http.post("http://localhost:5000/Login", this.form, {
 				emulateJSON: true
 			}).then(response => { //success
 					console.log(response.body);
